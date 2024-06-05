@@ -1,0 +1,18 @@
+extends layout
+
+block content
+    h1= title
+    if authorResults.length || bookResults.length
+        h2 Authors
+        ul
+            each result in authorResults
+                li
+                    a(href=result.url) #{result.name}
+        h2 Books
+        ul
+            each result in bookResults
+                li
+                    a(href=result.url) #{result.title}
+                    |  (#{result.author.name})
+    else
+        p There are no search results.

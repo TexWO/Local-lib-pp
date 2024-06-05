@@ -10,6 +10,8 @@ const BookSchema = new Schema({
     genre: [{ type: Schema.Types.ObjectId, ref: "Genre" }],
 });
 
+BookSchema.index({ title: "text"});
+
 // Virtual for book's URL
 BookSchema.virtual("url").get(function () {
     // We don't use an arrow function as we'll need the this object
