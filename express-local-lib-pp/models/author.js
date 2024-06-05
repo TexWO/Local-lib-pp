@@ -11,6 +11,8 @@ const AuthorSchema = new Schema({
     image_path: { type: String },
 });
 
+AuthorSchema.index({ first_name: 'text', family_name: 'text'});
+
 // Virtual for author's full name
 AuthorSchema.virtual("name").get(function () {
     // To avoid errors in cases where an author does not have either a family name or first name
