@@ -1,0 +1,35 @@
+extends layout
+
+block content
+    h1= title
+    p Welcome to the SQL page
+
+    h2 Authors
+    table
+        thead
+            tr
+                th ID
+                th First Name
+                th Family Name
+                th Date of Birth
+                th Date of Death
+        tbody
+            each authorrow in AuthorData
+                tr
+                    td= authorrow.id
+                    td= authorrow.first_name
+                    td= authorrow.family_name
+                    td= authorrow.date_of_birth
+                    td= authorrow.date_of_death
+
+    h2 Genres
+    table
+        thead
+            tr
+                th ID
+                th Name
+        tbody
+            each row in GenreData
+                tr
+                    td= row.id
+                    td= row.name
