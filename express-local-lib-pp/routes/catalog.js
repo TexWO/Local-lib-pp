@@ -8,6 +8,7 @@ const genre_controller = require("../controllers/genreController");
 const book_instance_controller = require("../controllers/bookinstanceController");
 const Author = require("../models/author");
 const Book = require("../models/book");
+const db = require('../initSQL')
 
 /// BOOK ROUTES ///
 
@@ -145,6 +146,27 @@ router.get("/search", async (req, res) => {
         authorResults: authorResults,
         bookResults: bookResults,
     })
+});
+
+router.get("/sql", (req, res) => {
+    const query1 = 'SELECT * FROM Authors'
+    const query2 = 'SELECT * FROM Genres'
+    db.all(query1, [], (err, AuthorRows) => {
+        if (err) {
+            console.error(err.message);
+            res.status(500).send('Error retrieving all authors');
+            return;
+        }
+
+        db.all(query2, [], (err, GenreRows) => {
+            if (err) {
+                console.error(err.message);
+                res.status(500).send('Error retrieving all genres');
+                return;
+            }
+            res.render("SQL", { AuthorData: AuthorRows,GenreData: GenreRows ,title: "SQL database results" });
+        });
+    });
 });
 
 module.exports = router;

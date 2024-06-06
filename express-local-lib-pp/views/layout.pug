@@ -12,7 +12,7 @@ html(lang='en')
     //Navbar
     nav(class="navbar bg-dark" data-bs-theme="dark")
         div(class='container-fluid')
-          a(class='navbar-brand text-white' href='/') Local Library
+          a(class='navbar-brand text-white' href='/') Local Library ++
           form(class='d-flex ml-auto' role='search' id='search-form' action='/catalog/search' method='get')
             input(class='form-control mr-sm-2', type='search', placeholder='Search', aria-label='Search', name='q')
             button(class='btn btn-outline-success bg-', type='submit') Search
@@ -43,6 +43,10 @@ html(lang='en')
                 a(href='/catalog/book/create') Create new book
               li
                 a(href='/catalog/bookinstance/create') Create new book instance (copy)
+              li
+                hr
+              li
+                a(href='/catalog/SQL') View SQL data
 
         div(class='col-sm-10')
           block content
