@@ -6,8 +6,6 @@ This project is part of the final exam for the course "Internetworking and Web-p
 
 The Local Library project is a web application that provides an interface for managing a collection of books, authors, genres, and book instances. Users can view lists of items, detailed information for each item, and create new records. This project demonstrates the application of MongoDB for database management, Express.js for server-side logic, and Bootstrap for responsive front-end design.
 
-This project was developed as part of the final exam for the "Internetworking and Web-programming" course at Aalborg University (AAU).
-
 ## Technologies Used
 
 - **Node.js**: JavaScript runtime environment
